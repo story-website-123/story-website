@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: story-website-123/story-website  # 替换成你的GitHub用户名，比如 "zhangsan/story-website"
+  branch: main
+  site_domain: 你的GitHub用户名.github.io
+
+media_folder: "images" # 封面图存储文件夹
+public_folder: "/images" # 封面图访问路径
+
+collections:
+  - name: "stories" # 故事内容集合
+    label: "故事管理" # 后台显示名称
+    folder: "_stories" # 故事数据存储文件夹
+    create: true # 允许创建新故事
+    slug: "{{slug}}" # 自动生成链接
+    fields: # 上传故事时需要填写的字段
+      - {label: "故事标题", name: "title", widget: "string", required: true}
+      - {label: "故事系列", name: "series", widget: "string", required: true, hint: "比如：小熊的奇妙冒险、晚安宝贝系列"}
+      - {label: "故事类别", name: "category", widget: "select", required: true, options: ["睡前故事", "寓言故事", "经典童话", "成长教育", "动物故事", "科普故事"]}
+      - {label: "播放时长", name: "duration", widget: "string", required: true, hint: "比如：5分钟、8分钟"}
+      - {label: "封面图片", name: "cover", widget: "image", required: true, hint: "建议尺寸400x600px，JPG/PNG格式"}
+      - {label: "音频文件", name: "audio", widget: "file", required: true, hint: "仅支持MP3格式，单个文件≤10MB"}
+      - {label: "播放量", name: "play_count", widget: "number", default: 0}
+      - {label: "是否显示", name: "published", widget: "boolean", default: true}backend:
+  name: github
+  repo: 你的GitHub用户名/story-website  # 替换成你的GitHub用户名，比如 "zhangsan/story-website"
+  branch: main
+  site_domain: 你的GitHub用户名.github.io
+
+media_folder: "images" # 封面图存储文件夹
+public_folder: "/images" # 封面图访问路径
+
+collections:
+  - name: "stories" # 故事内容集合
+    label: "故事管理" # 后台显示名称
+    folder: "_stories" # 故事数据存储文件夹
+    create: true # 允许创建新故事
+    slug: "{{slug}}" # 自动生成链接
+    fields: # 上传故事时需要填写的字段
+      - {label: "故事标题", name: "title", widget: "string", required: true}
+      - {label: "故事系列", name: "series", widget: "string", required: true, hint: "比如：小熊的奇妙冒险、晚安宝贝系列"}
+      - {label: "故事类别", name: "category", widget: "select", required: true, options: ["睡前故事", "寓言故事", "经典童话", "成长教育", "动物故事", "科普故事"]}
+      - {label: "播放时长", name: "duration", widget: "string", required: true, hint: "比如：5分钟、8分钟"}
+      - {label: "封面图片", name: "cover", widget: "image", required: true, hint: "建议尺寸400x600px，JPG/PNG格式"}
+      - {label: "音频文件", name: "audio", widget: "file", required: true, hint: "仅支持MP3格式，单个文件≤10MB"}
+      - {label: "播放量", name: "play_count", widget: "number", default: 0}
+      - {label: "是否显示", name: "published", widget: "boolean", default: true}
